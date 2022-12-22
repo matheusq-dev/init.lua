@@ -28,3 +28,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "200"
 
+vim.scriptencoding = 'utf-8'
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
+
+
