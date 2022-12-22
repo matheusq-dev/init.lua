@@ -18,7 +18,7 @@ vim.keymap.set("n", "K", "5k")
 
 -- Nvimtree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>")
-vim.keymap.set("v", "<leader>f", ":NvimTreeFocus<CR>")
+-- vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>")
+-- vim.keymap.set("v", "<leader>f", ":NvimTreeFocus<CR>")
 
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
