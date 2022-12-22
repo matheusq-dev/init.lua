@@ -27,6 +27,9 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
+    use 'nvim-telescope/telescope-symbols.nvim'
+    use 'nvim-tree/nvim-web-devicons'
+
 
     use({
         'helbing/aura.nvim',
@@ -44,15 +47,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
-
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    use({ 'nvim-treesitter/nvim-treesitter' })
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
