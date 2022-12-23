@@ -6,12 +6,15 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'NvChad/base46'
     use "terrortylor/nvim-comment"
     use('hoob3rt/lualine.nvim')
     use('glepnir/dashboard-nvim')
 
     use 'neovim/nvim-lspconfig' -- LSP
     use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    use("jayp0521/mason-null-ls.nvim")
+    use('MunifTanjim/prettier.nvim')
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
 
