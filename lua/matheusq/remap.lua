@@ -11,7 +11,7 @@ vim.keymap.set({"n", "v"}, "<leader>h", "_")
 vim.keymap.set({"n", "v"}, "<leader>l", "$")
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
+--vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
 
 vim.keymap.set("n", "J", "5j")
 vim.keymap.set("n", "K", "5k")
@@ -21,5 +21,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
 
-vim.keymap.set("n", "<c-s>", ":w<CR>")
+vim.keymap.set({"n", "i"}, "<c-s>", ":w<CR> <bar> :TSLspOrganizeSync<CR> <bar> :w<CR>")
+
+vim.keymap.set({"n", "i"}, "<c-i>", ":TSLspImportCurrent<CR>")
 

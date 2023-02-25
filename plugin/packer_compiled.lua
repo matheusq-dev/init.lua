@@ -127,10 +127,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
-  dracula = {
+  ["dracula.nvim"] = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0" },
     loaded = true,
-    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula",
+    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
   ["friendly-snippets"] = {
@@ -218,6 +218,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-lsp-ts-utils",
+    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
@@ -301,10 +307,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: dracula
-time([[Config for dracula]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0", "config", "dracula")
-time([[Config for dracula]], false)
+-- Config for: dracula.nvim
+time([[Config for dracula.nvim]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0", "config", "dracula.nvim")
+time([[Config for dracula.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]

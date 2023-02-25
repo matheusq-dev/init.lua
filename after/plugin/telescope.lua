@@ -66,13 +66,14 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
+      initial_mode = "insert",
       theme = "dropdown",
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
       mappings = {
         -- your custom insert mode mappings
         ["i"] = {
-          ["<C-w>"] = function() vim.cmd('normal vbd') end,
+         ["<C-w>"] = function() vim.cmd('normal vbd') end,
         },
         ["n"] = {
           -- your custom normal mode mappings
@@ -113,6 +114,6 @@ vim.keymap.set('n', '<leader>f', function()
   builtin.live_grep()
 end)
 
-vim.keymap.set('n', 'fe', function()
+vim.keymap.set('n', '<leader>d', function()
   builtin.diagnostics()
 end)

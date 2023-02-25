@@ -7,7 +7,6 @@ local source_mapping = {
   path = "[Path]",
 }
 
-
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -19,8 +18,15 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
     ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-u>"] = cmp.mapping.abort(),
     ["<c-y>"] = cmp.mapping(
+      cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
+      },
+      { "i", "c" }
+    ),
+    ["<c-CR>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
@@ -39,16 +45,11 @@ cmp.setup({
         end
       end,
     },
-    ["<tab>"] = cmp.config.disable,
-    ["<c-q>"] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
   },
   sources = cmp.config.sources({
+    { name = "nvim_lsp"  },
     { name = 'cmp_tabnine' },
     { name = "nvim_lua" },
-    { name = "nvim_lsp"  },
     { name = "path" },
     { name = 'luasnip' },
     { name = 'buffer', keyword_length = 5 },
