@@ -79,12 +79,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  aura = {
-    config = { "\27LJ\2\n4\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\21colorscheme aura\bcmd\bvim\0" },
-    loaded = true,
-    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\aura",
-    url = "https://github.com/helbing/aura.nvim"
-  },
   base46 = {
     loaded = true,
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\base46",
@@ -133,6 +127,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  dracula = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0" },
+    loaded = true,
+    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -152,6 +152,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-colors.nvim",
+    url = "https://github.com/folke/lsp-colors.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -296,10 +301,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: aura
-time([[Config for aura]], true)
-try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\21colorscheme aura\bcmd\bvim\0", "config", "aura")
-time([[Config for aura]], false)
+-- Config for: dracula
+time([[Config for dracula]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0", "config", "dracula")
+time([[Config for dracula]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]

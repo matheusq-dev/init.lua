@@ -32,11 +32,13 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("nvim-tree/nvim-web-devicons")
 
+ vim.cmd('let g:dracula_colorterm = 0')
+vim.cmd('let g:dracula_italic = 1')
+
 	use({
-		"helbing/aura.nvim",
-		as = "aura",
+		"Mofiqul/dracula.nvim",
 		config = function()
-			vim.cmd("colorscheme aura")
+			vim.cmd("colorscheme dracula")
 		end,
 	})
 
@@ -89,5 +91,7 @@ return require("packer").startup(function(use)
 
    use 'windwp/nvim-autopairs'
    use 'windwp/nvim-ts-autotag'
+
+   use 'folke/lsp-colors.nvim'
 
 end)
