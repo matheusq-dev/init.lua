@@ -28,6 +28,10 @@ return require("packer").startup(function(use)
         'jose-elias-alvarez/nvim-lsp-ts-utils',
         config = function() require('ts-config') end
   }
+
+  use("jose-elias-alvarez/typescript.nvim")
+
+
     
 	use("glepnir/lspsaga.nvim") -- LSP UIs
 	use("L3MON4D3/LuaSnip")

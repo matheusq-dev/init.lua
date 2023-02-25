@@ -21,7 +21,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
 
-vim.keymap.set({"n", "i"}, "<c-s>", ":w<CR> <bar> :TSLspOrganizeSync<CR> <bar> :w<CR>")
+vim.keymap.set({"n", "i"}, "<c-s>", ":w<CR> <bar> :TypescriptOrganizeImports<CR> <bar> :TypescriptRemoveUnused<CR> <bar> :w<CR>")
 
-vim.keymap.set({"n", "i"}, "<c-i>", ":TSLspImportCurrent<CR>")
+vim.keymap.set({"n", "i"}, "<c-i>", ":TypescriptAddMissingImports<CR>")
 
