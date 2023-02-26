@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This file can be loaded by calling `lua require('plugins')` from your init.
 
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd("packer.nvim")
@@ -24,13 +24,10 @@ return require("packer").startup(function(use)
 	use("hrsh7th/nvim-cmp") -- Completion
 	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
 
-   use {
-        'jose-elias-alvarez/nvim-lsp-ts-utils',
-        config = function() require('ts-config') end
-  }
-
   use("jose-elias-alvarez/typescript.nvim")
 
+
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
     
 	use("glepnir/lspsaga.nvim") -- LSP UIs

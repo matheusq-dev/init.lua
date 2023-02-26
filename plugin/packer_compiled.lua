@@ -218,12 +218,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
-  ["nvim-lsp-ts-utils"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-lsp-ts-utils",
-    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
@@ -284,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["typescript.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Matheus\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\typescript.nvim",
+    url = "https://github.com/jose-elias-alvarez/typescript.nvim"
   },
   undotree = {
     loaded = true,

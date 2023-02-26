@@ -23,5 +23,5 @@ vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
 
 vim.keymap.set({"n", "i"}, "<c-s>", ":w<CR> <bar> :TypescriptOrganizeImports<CR> <bar> :TypescriptRemoveUnused<CR> <bar> :w<CR>")
 
-vim.keymap.set({"n", "i"}, "<c-i>", ":TypescriptAddMissingImports<CR>")
+vim.keymap.set({"n", "i"}, "<S-i>", ":TypescriptAddMissingImports<CR>")
 
