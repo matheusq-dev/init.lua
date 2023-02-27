@@ -23,12 +23,9 @@ return require("packer").startup(function(use)
 
 	use("hrsh7th/nvim-cmp") -- Completion
 	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
-
-  use("jose-elias-alvarez/typescript.nvim")
-
-
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
+  use{"jose-elias-alvarez/typescript.nvim", requires = 'jose-elias-alvarez/nvim-lsp-ts-utils'}
     
 	use("glepnir/lspsaga.nvim") -- LSP UIs
 	use("L3MON4D3/LuaSnip")
@@ -39,15 +36,7 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("nvim-tree/nvim-web-devicons")
 
- vim.cmd('let g:dracula_colorterm = 0')
-vim.cmd('let g:dracula_italic = 1')
-
-	use({
-		"Mofiqul/dracula.nvim",
-		config = function()
-			vim.cmd("colorscheme dracula")
-		end,
-	})
+  use 'helbing/aura.nvim'
 
 	use({
 		"akinsho/toggleterm.nvim",
