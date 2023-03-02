@@ -66,8 +66,13 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
-      initial_mode = "insert",
+      initial_mode = "normal",
       theme = "dropdown",
+      respect_gitignore = true,
+      hidden = true,
+      grouped = true,
+      previewer = false,
+      layout_config = { height = 25 },
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
       mappings = {
@@ -98,7 +103,7 @@ telescope.load_extension("file_browser")
 vim.api.nvim_set_keymap(
   "n",
   "<space>b",
-  ":Telescope file_browser<CR>",
+  ":Telescope file_browser path=%:p:h select_buffer=true <CR>",
   { noremap = true }
 )
 
@@ -117,3 +122,4 @@ end)
 vim.keymap.set('n', '<leader>d', function()
   builtin.diagnostics()
 end)
+

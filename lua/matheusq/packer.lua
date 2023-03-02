@@ -36,7 +36,7 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("nvim-tree/nvim-web-devicons")
 
-  use 'helbing/aura.nvim'
+use "rebelot/kanagawa.nvim"
 
 	use({
 		"akinsho/toggleterm.nvim",
