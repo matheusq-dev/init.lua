@@ -2,6 +2,9 @@ local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
+local project_actions = require("telescope._extensions.project.actions")
+local project_utils = require("telescope._extensions.project.utils")
+local telescope_actions = require("telescope.actions")
 
 builtin.symbols{ sources = {'emoji', 'kaomoji', 'gitmoji'} }
 
@@ -14,8 +17,12 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
    defaults = {
-    file_ignore_patterns = { "node_modules", ".git/*", "dist" },
+    file_ignore_patterns = { "node_modules", ".git/*", "dist", "*/*.min.js"},
     mappings = {
+      i = {
+        ["<C-j>"] = actions.cycle_history_next,
+        ["<C-k>"] = actions.cycle_history_prev,
+      },
       n = {
         ["q"] = actions.close
       },
@@ -39,7 +46,7 @@ telescope.setup {
     layout_strategy = "horizontal",
     layout_config = {
       horizontal = {
-        prompt_position = "top",
+        prompt_position = "bottom",
         preview_width = 0.55,
         results_width = 0.8,
       },
@@ -65,6 +72,26 @@ telescope.setup {
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
   },
   extensions = {
+    project = {
+      base_dirs = {
+        'C:/Users/matheusq/Documents/workspace',
+      },
+      hidden_files = true, -- default: false
+      theme = "dropdown",
+      order_by = "asc",
+      search_by = "title",
+      -- default for on_project_selected = find project files
+      on_project_selected = function(prompt_bufnr)
+        local path = project_actions.get_selected_path(prompt_bufnr)
+        telescope_actions.close(prompt_bufnr)
+        project_utils.change_project_dir(path)
+
+        builtin.find_files({
+          no_ignore = false,
+          hidden = true
+        })
+      end
+    },
     file_browser = {
       initial_mode = "normal",
       theme = "dropdown",
@@ -72,7 +99,12 @@ telescope.setup {
       hidden = true,
       grouped = true,
       previewer = false,
-      layout_config = { height = 25 },
+      layout_config = { 
+        height = 25,
+        horizontal = {
+          prompt_position = "bottom"
+        },
+      },
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
       mappings = {
@@ -99,11 +131,20 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension("project")
 
 vim.api.nvim_set_keymap(
   "n",
   "<space>b",
   ":Telescope file_browser path=%:p:h select_buffer=true <CR>",
+  { noremap = true }
+)
+
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>w",
+  ":Telescope project <CR>",
   { noremap = true }
 )
 
@@ -114,6 +155,7 @@ vim.keymap.set('n', '<C-p>',
       hidden = true
     })
   end)
+
 
 vim.keymap.set('n', '<leader>f', function()
   builtin.live_grep()

@@ -3,9 +3,17 @@ if (not status) then return end
 
 -- Gruvbox bufferline setup
 bufferline.setup({
+   highlights = {
+        buffer_selected = {
+                fg = "#61ffca",
+                bg = '#000000',
+                bold = true,
+                italic = false,
+            },
+   },
   options = {
     mode = "buffers",
-    separator_style = "slant",
+    separator_style = "any",
     always_show_bufferline = true,
     show_buffer_close_icons = false,
     show_close_icon = false,

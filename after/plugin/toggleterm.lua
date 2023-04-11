@@ -18,6 +18,10 @@ local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({
   cmd = "lazygit",
   dir = "git_dir",
+
+  shell = "alacritty.exe",
+
+  auto_scroll = true,
   direction = "float",
   float_opts = {
     border = "double",
@@ -39,7 +43,15 @@ end
 
 toggleterm.setup({
     direction = "float",
+    size = 10,
+    start_in_insert = true,
+  shade_terminals = false,
+    auto_scroll = true,
+    shell = "powershell.exe",
     open_mapping = [[<c-t>]],
+    float_opts = {
+            border = "curved"
+    },
 })
 
 M._lazygit_toggle = _lazygit_toggle

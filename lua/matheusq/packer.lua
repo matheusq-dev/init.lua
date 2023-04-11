@@ -9,7 +9,30 @@ return require("packer").startup(function(use)
 	use("NvChad/base46")
 	use("terrortylor/nvim-comment")
 	use("hoob3rt/lualine.nvim")
-	use("glepnir/dashboard-nvim")
+  use('kdheepak/lazygit.nvim')
+
+use {
+  'glepnir/dashboard-nvim',
+  config = function()
+    require('dashboard').setup {
+  theme = 'hyper',
+  config = {
+    week_header = {
+     enable = true,
+    },
+    packages = { enable = false },
+    shortcut = {
+      { desc = ' Update', group = '@property', action = 'PlugUpdate', key = 'u' },
+      { desc = ' Find File', group = 'Label', action = 'Telescope find_files', key = 'f', },
+      { desc = ' Find Word', group = 'Label', action = 'Telescope live_grep', key = 'w', },
+      { desc = ' File Browser', group = 'Label', action = 'Telescope file_browser', key = 'b', },
+      { desc = ' Colorschemes', group = 'Number', action = 'Telescope colorscheme', key = 'c', },
+    },
+    }
+  }
+  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
 
 	use("neovim/nvim-lspconfig") -- LSP
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
@@ -33,10 +56,12 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
+	use("nvim-telescope/telescope-project.nvim")
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("nvim-tree/nvim-web-devicons")
 
-use "rebelot/kanagawa.nvim"
+  use "rebelot/kanagawa.nvim"
+  use("mattn/emmet-vim")
 
 	use({
 		"akinsho/toggleterm.nvim",
@@ -51,6 +76,8 @@ use "rebelot/kanagawa.nvim"
 	use("theprimeagen/harpoon")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
+
+  use("xiyaowong/transparent.nvim")
 
 	use({ "tzachar/cmp-tabnine", after = "nvim-cmp", run = "powershell ./install.ps1", requires = "hrsh7th/nvim-cmp" })
 
