@@ -1,12 +1,14 @@
-local status, mason = pcall(require, "mason")
-if (not status) then return end
-local status2, lspconfig = pcall(require, "mason-lspconfig")
-if (not status2) then return end
+local servers = {
+	"lua_ls",
+	"tsserver",
+	"jsonls",
+	"yamlls",
+}
 
-mason.setup({
-
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = servers,
+	automatic_installation = true,
 })
 
-lspconfig.setup {
-  automatic_installation = true
-}
+
