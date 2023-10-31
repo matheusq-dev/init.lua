@@ -1,24 +1,28 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function()
-    require('lualine').setup({
-      sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
-        lualine_x = { 'filetype' },
-        lualine_y = {},
-        lualine_z = { 'location' }
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { 'filename' },
-        lualine_x = { 'location', 'encoding', 'fileformat' },
-        lualine_y = { 'progress' },
-        lualine_z = {}
-      },
-    })
-  end
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		require("lualine").setup({
+			options = {
+				theme = "nightfly",
+				section_separators = { left = "", right = "" },
+			},
+			sections = {
+				lualine_a = {},
+				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_c = {},
+				lualine_x = { "filetype" },
+				lualine_y = {},
+				lualine_z = {},
+			},
+			inactive_sections = {
+				lualine_a = {},
+				lualine_b = {},
+				lualine_c = { "filename" },
+				lualine_x = { "location", "encoding", "fileformat" },
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
+			},
+		})
+	end,
 }
