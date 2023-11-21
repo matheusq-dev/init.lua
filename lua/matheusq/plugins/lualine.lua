@@ -2,9 +2,12 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+		local custom_nightfly = require("lualine.themes.nightfly")
+		custom_nightfly.normal.c.bg = "#1a1b26"
+
 		require("lualine").setup({
 			options = {
-				theme = "nightfly",
+				theme = custom_nightfly,
 				section_separators = { left = "", right = "" },
 			},
 			sections = {
