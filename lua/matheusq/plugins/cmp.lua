@@ -8,6 +8,7 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
+		"Exafunction/codeium.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -21,8 +22,12 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
+			confirm_opts = {
+				select = false,
+			},
 			completion = {
 				completeopt = "menu, menuone, preview, noselect",
+				keyword_length = 1,
 			},
 			snippet = { -- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
@@ -57,10 +62,11 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", priority = 50, keyword_length = 3 }, -- lsp
+				{ name = "codeium", priority = 60, keyword_length = 0 },
+				{ name = "nvim_lsp", priority = 50, keyword_length = 2 }, -- lsp
 				{ name = "buffer", priority = 40, keyword_length = 3 }, -- text within current buffer
-				{ name = "luasnip", priority = 30, keyword_length = 3 }, -- snippets
-				{ name = "path", priority = 20, keyword_length = 3 }, -- file system paths
+				{ name = "luasnip", priority = 30, keyword_length = 5 }, -- snippets
+				{ name = "path", priority = 20, keyword_length = 5 }, -- file system paths
 				{ name = "nvim_lsp_signature_help", keyword_length = 3 }, -- display function signatures with current parameter emphasized
 				{ name = "nvim_lua", keyword_length = 3 }, -- complete neovim's Lua runtime API such vim.lsp.*
 				{ name = "vsnip", keyword_length = 3 }, -- nvim-cmp source for vim-vsnip

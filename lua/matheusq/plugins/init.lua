@@ -4,6 +4,8 @@ return {
 	"matze/vim-move",
 	"mg979/vim-visual-multi",
 	"christoomey/vim-tmux-navigator",
+	"sindrets/diffview.nvim",
+	"Wansmer/treesj",
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
