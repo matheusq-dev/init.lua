@@ -24,6 +24,7 @@ vim.keymap.set({ "n" }, "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set({ "n" }, "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set({ "n" }, "gh", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set({ "n" }, "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
+vim.keymap.set({ "n" }, "?", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
 vim.keymap.set({ "n" }, "<leader>dd", function()
 	if vim.g.file_diff == true then
