@@ -147,5 +147,6 @@ return {
 		end
 
 		vim.lsp.handlers["textDocument/publishDiagnostics"] = filter_tsserver_diagnostics
+		--vim.diagnostic.config = filter_tsserver_diagnostics
 	end,
 }

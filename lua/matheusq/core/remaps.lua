@@ -1,3 +1,13 @@
+local function LspToggle()
+	if vim.g.diagnostic_virtual_text_enabled == true then
+		vim.diagnostic.config({ virtual_text = false })
+		vim.g.diagnostic_virtual_text_enabled = false
+	else
+		vim.diagnostic.config({ virtual_text = true })
+		vim.g.diagnostic_virtual_text_enabled = true
+	end
+end
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>p", '"_diwP')
 
@@ -17,6 +27,9 @@ vim.keymap.set({ "n", "v" }, "=", "<Cmd>lua require('treesj').toggle()<CR>")
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "v" }, "<leader>ip", [["+p]])
+vim.keymap.set({ "n", "v" }, "<leader>t", function()
+	LspToggle()
+end)
 
 vim.keymap.set({ "n" }, "'", "ysiw'")
 
@@ -25,6 +38,24 @@ vim.keymap.set({ "n" }, "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set({ "n" }, "gh", "<Cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set({ "n" }, "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set({ "n" }, "?", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+
+vim.keymap.set({ "n" }, "|", "<cmd>vsplit<CR>")
+
+vim.g.saved_cursor_position = {}
+
+-- Map Ctrl-y to insert a new line below and return to the exact cursor position
+vim.keymap.set(
+	"n",
+	"<leader>o",
+	'<Esc>:let g:saved_cursor_position = getpos(".")<CR>o<Up><Esc>:call setpos(".", g:saved_cursor_position)<CR>'
+)
+
+-- Map Ctrl-z to insert a new line above and return to the exact cursor position
+vim.keymap.set(
+	"n",
+	"<leader>O",
+	'<Esc>:let g:saved_cursor_position = getpos(".")<CR>O<Down><Esc>:let g:saved_cursor_position[1] = g:saved_cursor_position[1] + 1<CR>:call setpos(".", g:saved_cursor_position)<CR>'
+)
 
 vim.keymap.set({ "n" }, "<leader>dd", function()
 	if vim.g.file_diff == true then

@@ -8,7 +8,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
-vim.opt.guicursor = "" 
+vim.opt.guicursor = ""
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -29,6 +29,11 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "200"
 
-vim.scriptencoding = 'utf-8'
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+
+-- spell checks
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+vim.o.completeopt = "menuone,noselect"

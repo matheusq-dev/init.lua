@@ -33,7 +33,6 @@ return {
 				"<cmd>lua require('fzf-lua').grep_visual()<CR>",
 				{ silent = true }
 			)
-			vim.keymap.set("n", "<leader>t", "<cmd>lua require('fzf-lua').quickfix()<CR>", { silent = true })
 			fzf.register_ui_select(dropdown({
 				winopts = { title = "Select one of:", height = 0.33, row = 0.5 },
 			}))
