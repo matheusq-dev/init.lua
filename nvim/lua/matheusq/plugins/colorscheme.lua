@@ -7,6 +7,7 @@ return {
 		c.bg_highlight = "#192538"
 		c.dark3 = "#292e42"
 		c.bg_visual = "#292e42"
+		c.bg_popup = "#292e42"
 
 		local ok, _ = pcall(vim.cmd, "colorscheme lunar")
 		if not ok then
